@@ -5,36 +5,40 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/888acd4b49.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/devicon.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Spartan&display=swap" rel="stylesheet">
+ 
+
     <title>Jason Ouyang Web Portfolio</title>
 </head>
-<body>
+<body class="light">
 
     <!-- Header -->
     <header>
    
         <nav class="nav">
             <div class="brand-name">
-                <h1 id="p-name">JASON</h1>
+                <h1 id="p-name">JASON <span id="last" class="hidden">OUYANG</span></h1>
             </div>
             <ul class="navbar">
                 <li>
-                    <a class="strike-through" href="#section-start">
+                    <a class="strike-through" data-id="section-start" >
                         Welcome
                     </a>
                 </li>
                 <li>
-                    <a href="#section-projects">
-                       Projects
+                    <a data-id="section-about" >
+                        About
                     </a>
                 </li>
                 <li>
-                    <a href="#section-contact">
-                        Contact
+                    <a data-id="section-projects" >
+                       Projects
                     </a>
                 </li>
+               
             </ul>
         </nav>
      
@@ -47,7 +51,7 @@
             <!-- Profile Box -->
             <div class="jumbotron-section profile-box">
                 <div class="profile-desc">
-                    <p>My Name is Jason Ouyang. I'm a software developer
+                    <p>Software developer
                         who enjoys building web applications and finding the right
                         solutions.
                     </p>
@@ -55,40 +59,394 @@
                      
                  
                 </div>
-            
-                <h1 id="w-1" class="t-size text-right">USER</h1>
                 <h1 id="w-2" class="t-size text-right">SELF</h1>
-                <h1 id="w-3" class="t-size text-right">PROBLEM</h1>
+                <h1 id="w-1" class="t-size text-right">USER</h1>
+                <h1 id="w-3" class="t-size text-right">TEAM</h1>
 
             
 
             </div>
             <!-- Showcase Box -->
             <div class="jumbotron-section showcase-box">
-                    <h1 id="w-11" class="t-size text-left">FOCUSED</h1>
                     <h1 id="w-22" class="t-size text-left">DRIVEN</h1>
-                    <h1 id="w-33" class="t-size text-left">SOLVER</h1>
+                    <h1 id="w-11" class="t-size text-left">FOCUSED</h1>
+                    <h1 id="w-33" class="t-size text-left">FRIENDLY</h1>
                     <div class="showcase-img-block">
                         <h3 id="showcase-title">Latest Project</h3>
                         <div class="project-card team-chat">
                             <p id="team-chat-title">Team Chat</p id="team-chat-title">
                             <i class="fas fa-people-carry fa-5x"></i>
                         </div>
+                        <button id="btn-latest" class="more-info" data-target="team-chat-section">More Info</button>
 
                     </div>
+
 
             </div>
         </div>
     </section>
-    <section class="section" id="section-projects">
-        <section class="section" id="projects-menu">
+    <section class="section" id="section-about">
+        <h1>About</h1>
+            <div class="container">
+                <div class="about-container">
+                    <div class='about-section'>
 
+                        <h2>Background</h2>
+                    
+                        <p>
+                            Before deciding to become a software developer, I was 
+                            a recent college graduate who was pursuing a career
+                            in accounting and financial analyst. During the same time, I 
+                            was fascinated in the coding projects my friends were working on.
+                            Wanting to contribute, I've spent some time learning basic 
+                            html/css through online sources and then applying what I've learned into their projects. Overall,
+                            it was very rewarding to learn the knowedge and to help contribute.
+                        </p>
+
+                        <h2>Experience</h2>
+                        <h3>Los Angeles City Government Web Services Intern <span class="light">3/08/2020  - 03/08/2021</span></h3>
+                        <p>
+                            As an intern,I had a great time improving on my front end skills, learning some front end technologies, and most importantly serving my local community. 
+                            I first contributed in the migrations of the outdated static sites and then moved on to Dynamic sites based off the Drupal Framework.
+                            I also contributed in building a design system, used by the LA City developers to build consistent web components.
+                            I owe many thanks to the team that took the patience to train me the necessary knowledge.
+                        </p>
+                        <h4>Sample Contributions</h4>
+                        <ul>
+                            <li>
+                                Drupal 7 to Drupal 8 migration for Department of Disablity <a target="_blank" href="https://disability.lacity.org/">See Site</a>
+                            </li>
+                            <li>
+                                Drupal 7 to Drupal 8 migration for Los Angeles River Revitalization <a target="_blank" href="https://lariver.org/">See Site</a>
+                            </li>
+                            <li>
+                                Aliso Canyon static website technology migration <a target="_blank" href="https://alisocanyon.lacity.org/">See Site</a>
+                            </li>
+
+                        </ul>
+                        <h3>General Assembly Software Engineering Immersive <span class="light">3/08/2021  - 05/28/2021</span></h3>
+                        <p>
+                            I've decided to leave my internship to pursue a career as a fullstack devloper. General Assembly's 
+                            program help taught me the necessary tools and knowledge to become a sucessful fullstack developer. Throughout the time there,
+                            I spent countless hours learning many web technologies, working collaboratively with my fellow peers, and applying
+                            the learnt knowledge towards my full stack projects.   
+                        </p>
+                    </div>
+                    <div class='about-section v-center'>
+                        <h2 class="center">Languages and Framework</h2>
+                        <div class="about-container">
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-html5-plain colored"></i>
+
+
+
+                                </div>  
+                                
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-css3-plain colored"></i>
+
+
+
+                                </div>  
+                                
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-sass-original colored"></i>
+
+
+                                </div>  
+                                
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-bootstrap-plain colored"></i>
+
+
+
+                                </div>  
+                                
+                            </div>
+                        
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-javascript-plain colored"></i>
+
+
+                                </div>  
+                                
+                            </div>
+                        
+                           
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-python-plain colored"></i>
+
+                                </div>
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-ruby-plain colored"></i>
+
+                                </div>
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-php-plain colored"></i>
+
+                                </div>
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-react-original colored"></i>
+
+
+                                </div>
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-express-original colored"></i>
+
+                                </div>
+                            </div>
+                         
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-flask-original-wordmark colored"></i>
+                               
+
+
+                                </div>
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-rails-plain-wordmark colored"></i>
+
+
+                                </div>
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-drupal-plain colored"></i>
+
+
+                                </div>
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-postgresql-plain-wordmark colored"></i>
+
+                                   
+
+
+                                </div>
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-mysql-plain-wordmark colored"></i>
+
+
+
+                                </div>  
+                                
+                            </div>
+                        </div>
+                        
+                        <h2 class="center">Deployment and Control</h2>
+                        <div class="about-container">
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-heroku-plain-wordmark colored"></i>
+
+
+
+
+                                </div>  
+                                
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-git-plain-wordmark colored"></i>
+
+
+
+
+
+                                </div>  
+                                
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-github-original colored"></i>
+
+
+
+
+
+                                </div>  
+                                
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-amazonwebservices-plain-wordmark colored"></i>
+
+
+
+
+
+                                </div>  
+                                
+                            </div>
+                            <div class="logo-box">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-firebase-plain-wordmark colored"></i>
+
+
+
+
+
+                                </div>  
+                                
+                            </div>
+                        </div>  
+                        <h2 class="center">Contacts And Resume</h2>
+                        <div class="about-container">
+                            <a target="_blank" href="https://www.linkedin.com/in/jason-ouyang2312/" class="logo-box-contact">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-linkedin-plain colored"></i>
+
+                                    <p>LinkedIn</p>
+
+
+
+
+                                </div>  
+                            </a>
+                            <a href="https://drive.google.com/file/d/1sc4YljggdkzrgZ5czAhF5JuTRodzQxzj/view?usp=sharing"class="logo-box-contact">
+                                <div class="logo-img-holder">
+                                    <i class="far fa-file"></i>
+
+                                    <p>Resume</p>
+
+
+
+                                </div>  
+                            </a>
+                            <a target="_blank" href="https://github.com/JasonOuyang8000"class="logo-box-contact">
+                                <div class="logo-img-holder">
+                                    <i class="devicon-github-original-wordmark colored"></i>
+                                    <p>Github</p>
+
+
+
+
+
+                                </div>  
+                            </a>
+                            <a target="_blank" href="mailto:jasonouyang80@outlook.com"class="logo-box-contact">
+                                <div class="logo-img-holder">
+                                    <i class="far fa-envelope"></i>
+                                    <p>Email</p>
+
+
+
+
+
+                                </div>  
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+    
+            </div>
+
+
+    
+ 
+   
+
+    </section>
+    <section class="section" id="section-projects">
+ 
+        <section class="section" id="projects-menu">
+            <h1>Projects Menu</h1>
+            <div class="container">
+                <div class="menu-holder">
+                   
+                    <div class="menu-item">
+
+                        <div class="menu-card">
+                            <h3>Crypto Play</h3>
+                                   <div class="btn-container">
+                                <button><a target="_blank" href="https://crypto-play-frontend.herokuapp.com/">Live Link</a></button>
+                                <button class="more-info" data-target="crypto-section-1">More Info</button>
+                            </div>
+                            <img class="img-card" src="assets/images/crypto_play_version_1.JPG">
+                            <ul>
+                                <li>VANILLA JS</li>
+                                <li>EXPRESS JS</li>
+                                <li>PSQL</li>
+                                <li>CHART.JS</li>
+                                <li>CSS3</li>
+                                <li>COIN RANK API</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-card">
+                            <h3>Socialfy </h3>
+                            <div class="btn-container">
+                                <button><a target="_blank" href="https://socialfy-front-end.herokuapp.com/">Live Link</a></button>
+
+                                <button class="more-info" data-target="socialfy-section">More Info</button>
+                            </div>
+                            <img class="img-card" src="assets/images/socialfy_screen_shot.JPG">
+                            <ul>
+                                <li>REACT JS</li>
+                                <li>EXPRESS JS</li>
+                                <li>PSQL</li>
+                                <li>BOOTSTRAP</li>
+                                <li>CSS3</li>
+                                <li>AWS S3</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-card">
+                            <h3>Team Chat</h3>
+                            <div class="btn-container">
+                                <button><a target="_blank" href="https://desolate-crag-83504.herokuapp.com/">Live Link</a></button>
+
+                                <button  class="more-info" data-target="team-chat-section">More Info</button>
+                            </div>
+                            <img class="img-card" src="assets/images/team_chat_screenshot.JPG">
+                            <ul>
+                                <li>REACT JS</li>
+                                <li>FLASK</li>
+                                <li>SOCKET IO</li>
+                                <li>PSQL</li>
+                                <li>REACT VIS</li>
+                                <li>CSS3</li>
+                                <li>BOOTSTRAP</li>
+                            </ul>
+                        </div>
+                    </div>
+              
+                </div>
+
+            </div>
+        
 
 
         </section>
+       
 
         <!-- Crypto Play 1 -->
-        <section class="section" id="project-section">
+        <section class="section project-section" id="crypto-section-1">
            
        
             <h1>CryptoPlay Version 1</h1>
@@ -156,6 +514,15 @@
                             <ol>
                         
                         </div>
+                        <div class="btn-container">
+                            <button class="btn-repo"><a target="_blank" href="https://github.com/JasonOuyang8000/Crypto-Exchange-Frontend">Frontend Repo</a></button>
+                          
+                            <button class="btn-repo"><a target="_blank" href="https://crypto-play-frontend.herokuapp.com/">Live Link</a></button>
+    
+                                
+                      
+                            <button class="btn-repo"><a target="_blank" href="https://github.com/JasonOuyang8000/Crypto-Exchange-Backend">Backend Repo</a></button>
+                        </div>
                        
                     </div>
                     <div class="proj-side">
@@ -165,7 +532,7 @@
                             <img class="project-image" alt="team-chat-login" src="assets/images/crypto_play_version_1.JPG"/>
                             <p>
                                 Crypto Play is a web application which allows users to buy/sell crypto 
-                                for a made up balance. Crypto prices are calculated via the COIN RANK API.
+                                for a made up balance. Crypto prices are calculated via prices from the COIN RANK API.
                             </p>
                         </div>
                      
@@ -174,10 +541,11 @@
                     </div>
                 </div>        
             </div>
+
             
         </section>
            <!-- Team Chat -->
-        <section class="section" id="project-section">
+        <section class="section project-section" id="team-chat-section">
            
        
             <h1>Team Chat</h1>
@@ -242,6 +610,15 @@
                             <ol>
                         
                         </div>
+                        <div class="btn-container">
+                            <button class="btn-repo"><a target="_blank" href="https://github.com/JasonOuyang8000/Team-Chat-Frontend">Frontend Repo</a></button>
+                          
+                            <button class="btn-repo"><a target="_blank" href="https://desolate-crag-83504.herokuapp.com/">Live Link</a></button>
+    
+                                
+                      
+                            <button class="btn-repo"><a target="_blank" href="https://github.com/JasonOuyang8000/Team-Chat-Backend">Backend Repo</a></button>
+                        </div>
                        
                     </div>
                     <div class="proj-side">
@@ -263,7 +640,7 @@
             
         </section>
          <!-- Socialfy -->
-        <section class="section" id="project-section">
+        <section class="section project-section" id="socialfy-section">
            
        
             <h1>Socialfy</h1>
@@ -337,6 +714,13 @@
                             <ol>
                         
                         </div>
+                        <div class="btn-container">
+                            <button class="btn-repo"><a target="_blank" href="https://github.com/JasonOuyang8000/Socialfy-Backend">Frontend Repo</a></button>
+                            <button class="btn-repo"><a target="_blank" href="https://socialfy-front-end.herokuapp.com/">Live Link</a></button>
+
+                            <button class="btn-repo"><a target="_blank" href="https://github.com/JasonOuyang8000/Socialfy-Frontend/tree/master/socialfy-app">Backend Repo</a></button>
+                            
+                        </div>
                        
                     </div>
                     <div class="proj-side">
@@ -358,14 +742,14 @@
             
         </section>
        
+       
+       
     </section>
 
-    <!-- <section class="section" id="section-contact">
 
 
-    </section> -->
-
-
+    <button class="hidden" id="back-to-menu">Back to Menu</button>
+ 
 
     <script src="./main.js"></script>
 </body>
