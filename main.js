@@ -1,8 +1,20 @@
 const navLinks = document.querySelectorAll('.navbar a');
 const navBar = document.querySelector('.navbar');
 const sections = document.querySelectorAll('body > .section');
+const projectSections = document.querySelectorAll('.project-section');
 const backToTop = document.querySelector('#back-to-top');
 const backToMenu= document.querySelector('#back-to-menu');
+const pInfo = document.querySelectorAll('.p-info');
+
+const projectPositions = [...projectSections].map(pos => {
+    const elemRect = pos.getBoundingClientRect();
+
+    return [elemRect.top + window.scrollY,elemRect.bottom + window.scrollY,pos]
+});
+
+
+
+
 const positions = [...sections].map(pos =>{
     const elemRect = pos.getBoundingClientRect();
 
@@ -21,6 +33,26 @@ const getCurrentElement = () => {
     
     return current[2];
 
+}
+
+document.querySelector('#hide').addEventListener('click', e => {
+    document.querySelector('.btn-info').classList.add('hidden');
+    document.querySelector('#show').classList.remove('hidden');
+    document.querySelector('#hide').classList.add('hidden');
+});
+
+document.querySelector('#show').addEventListener('click', e => {
+    document.querySelector('.btn-info').classList.remove('hidden');
+    document.querySelector('#show').classList.add('hidden');
+    document.querySelector('#hide').classList.remove('hidden');
+});
+
+const currentProjSection = () => {
+    const [current] = projectPositions.filter(pos => {
+     
+        return window.scrollY  + 300 >= pos[0] && window.scrollY + 300 <= pos[1]
+    });
+    return current[2];
 }
 
 const smooth_scroll_to = function(element, target, duration) {
@@ -135,17 +167,23 @@ window.addEventListener('scroll',((e) => {
     else {
         document.querySelector('#last').classList.add('hidden');
     }
+    if (window.scrollY >= projectPositions[0][0]) {
+        document.querySelector('.project-section-nav').classList.remove('hidden');
+        const currentLocation = currentProjSection();
+        pInfo.forEach(l => l.classList.remove('active'));
+        document.querySelector(`.project-section-nav button[data-target='${currentLocation.id}']`).classList.add('active');
 
-    // if (currentElement.id === 'section-projects') {
-    //     backToMenu.classList.remove('hidden');
-    // }
+    }
 
-    // else {
-    //     backToMenu.classList.add('hidden');
-    // }
+    else {
+        document.querySelector('.project-section-nav').classList.add('hidden');
+
+    }
+   
 
 }
 ));
+
 
 
 
@@ -170,9 +208,9 @@ moreInfoButton.forEach(button => {
 //     smooth_scroll_to(window,location + window.scrollY,800);
 // })
 
-
 backToMenu.addEventListener('click', (e) => {
-  
+    console.log('test');
+    console.log(document.getElementById('projects-menu'));
     const location = document.getElementById('projects-menu').getBoundingClientRect().top;
 
     smooth_scroll_to(window,location + window.scrollY,800);

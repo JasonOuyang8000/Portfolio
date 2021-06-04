@@ -132,7 +132,7 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .side-50 {
@@ -778,18 +778,6 @@ header {
   animation: fadein 1s;
 }
 
-#back-to-menu {
-  position: fixed;
-  bottom: 7rem;
-  right: 5rem;
-  border: 1px solid var(--card-border);
-  background: rgba(158, 157, 157, 0.13);
-  padding: 1rem 0.5rem;
-  width: 10rem;
-  cursor: pointer;
-  animation: fadein 0.5s;
-}
-
 #last {
   animation: fadein 0.4s;
   color: #383838;
@@ -903,6 +891,41 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.project-section-nav {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: white;
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  animation: fadein 1s;
+}
+.project-section-nav button {
+  border: 0;
+  padding: 1.5rem 0.5rem;
+  color: var(--section-text);
+  background: transparent;
+  cursor: pointer;
+}
+.project-section-nav .btn-info {
+  display: flex;
+  flex-direction: column;
+}
+.project-section-nav .active {
+  color: #4a9699;
+}
+.project-section-nav #hide {
+  text-align: center;
+  width: 100%;
+}
+.project-section-nav #show {
+  text-align: center;
+  width: 3rem;
 }
 
 /*# sourceMappingURL=style.css.map */

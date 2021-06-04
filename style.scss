@@ -60,7 +60,7 @@ body {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .side-50 {
@@ -745,18 +745,6 @@ header {
   animation: fadein 1s;
 }
 
-#back-to-menu {
-  position: fixed;
-  bottom: 7rem;
-  right: 5rem;
-  border: 1px solid var(--card-border);
-
-  background: rgba(158, 157, 157, 0.13);
-  padding: 1rem 0.5rem;
-  width: 10rem;
-  cursor: pointer;
-  animation: fadein 0.5s;
-}
 
 #last {
   animation: fadein 0.4s;
@@ -890,4 +878,43 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.project-section-nav {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+
+  background: rgb(255, 255, 255);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  animation: fadein 1s;
+  button {
+    border: 0;
+    padding: 1.5rem 0.5rem;
+    color: var(--section-text);
+    background: transparent;
+    cursor: pointer;
+    
+  }
+
+  .btn-info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .active {
+    color: rgb(74, 150, 153);
+  }
+  #hide {
+    text-align: center;
+    width: 100%;
+  }
+  #show {
+    text-align: center;
+    width: 3rem;
+  }
 }
