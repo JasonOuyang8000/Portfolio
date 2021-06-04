@@ -133,8 +133,13 @@ navLinks.forEach(link => link.addEventListener('click',(e) => {
 
     const location = targetedElement.getBoundingClientRect().top;
 
-
-   smooth_scroll_to(window,location + window.scrollY,800);
+    window.scroll({
+        top: location + window.scrollY, 
+        left: 0, 
+        behavior: 'smooth' 
+    });
+      
+//    smooth_scroll_to(window,location + window.scrollY,800);
 
 }));
 
