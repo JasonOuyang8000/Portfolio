@@ -57,73 +57,7 @@ const currentProjSection = () => {
     return current[2];
 }
 
-const smooth_scroll_to = function(element, target, duration) {
-    target = Math.round(target);
-    duration = Math.round(duration);
 
-    if (duration < 0) {
-        return Promise.reject("bad duration");
-    }
-    if (duration === 0) {
-        element.scrollY = target;
-        return Promise.resolve();
-    }
-
-    let start_time = Date.now();
-    let end_time = start_time + duration;
-
-    let start_top = element.scrollY;
-    let distance = target - start_top;
-
-    // based on http://en.wikipedia.org/wiki/Smoothstep
-    let smooth_step = function(start, end, point) {
-        if(point <= start) { return 0; }
-        if(point >= end) { return 1; }
-        let x = (point - start) / (end - start); // interpolation
-        return x*x*(3 - 2*x);
-    }
-
-    return new Promise(function(resolve, reject) {
-        // This is to keep track of where the element's scrollY is
-        // supposed to be, based on what we're doing
-        let previous_top = element.scrollY;
-        // This is like a think function from a game loop
-        let scroll_frame = function() {
-            if(element.scrollY != previous_top) {
-                reject("interrupted");
-                return;
-            }
-
-            // set the scrollY for this frame
-            let now = Date.now();
-            let point = smooth_step(start_time, end_time, now);
-            let frameTop = Math.round(start_top + (distance * point));
-            element.scrollTo(element.scrollY,frameTop);
- 
-            // check if we're done!
-            if(now >= end_time) {
-                resolve();
-                return;
-            }
-
-            // If we were supposed to scroll but didn't, then we
-            // probably hit the limit, so consider it done; not
-            // interrupted.
-            if(element.scrollY === previous_top
-                && element.scrollY !== frameTop) {
-                resolve();
-                return;
-            }
-            previous_top = element.scrollY;
-
-            // schedule next frame for execution
-            setTimeout(scroll_frame, 0);
-        }
-
-        // boostrap the animation process
-        setTimeout(scroll_frame, 0);
-    });
-}
 
 navLinks.forEach(link => link.addEventListener('click',(e) => {
     // navLinks.forEach(l => l.classList.remove('strike-through'));
@@ -139,7 +73,6 @@ navLinks.forEach(link => link.addEventListener('click',(e) => {
         behavior: 'smooth' 
     });
       
-//    smooth_scroll_to(window,location + window.scrollY,800);
 
 }));
 
@@ -203,8 +136,13 @@ moreInfoButton.forEach(button => {
     
         const location = targetedElement.getBoundingClientRect().top;
      
+        window.scroll({
+            top: location + window.scrollY, 
+            left: 0, 
+            behavior: 'smooth' 
+        });
         
-        smooth_scroll_to(window,location + window.scrollY,800);
+    
     })
 })
 
@@ -219,8 +157,13 @@ backToMenu.addEventListener('click', (e) => {
     console.log('test');
     console.log(document.getElementById('projects-menu'));
     const location = document.getElementById('projects-menu').getBoundingClientRect().top;
+    
+    window.scroll({
+        top: location + window.scrollY, 
+        left: 0, 
+        behavior: 'smooth' 
+    });
 
-    smooth_scroll_to(window,location + window.scrollY,800);
 })
 });
 
