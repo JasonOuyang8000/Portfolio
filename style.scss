@@ -82,7 +82,7 @@ h1 {
 }
 
 #p-name {
-  color: var(--section-text);
+  color: var(--bg-section);
   font-size: 2em;
   font-weight: 600;
 }
@@ -127,14 +127,14 @@ h1 {
 }
 
 header {
-  background: transparent;
+
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 999;
 
   @media screen and (max-width: $large) {
-    background: rgba(241, 241, 241, 0.329);
+    background: rgba(241, 241, 241, 0.671);
   }
 }
 
@@ -147,7 +147,6 @@ header {
   .brand-name {
   width: 50%;
   text-align: center;
-  color: black;
 
 }
 
@@ -168,7 +167,7 @@ header {
 
 .navbar {
   a {
-    color: #f3f3f3;
+    color: #0f0f0f;
     cursor: pointer;
     margin-right: 1.2rem;
     @media screen and (max-width: 1150px) {
@@ -219,7 +218,8 @@ header {
 }
 
 .profile-box {
-  background: white;
+  background: rgb(8, 8, 8);
+  color: rgb(216, 216, 216);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -266,8 +266,8 @@ header {
 
 
 .showcase-box {
-  background: #0a0a0a;
-  color: #f3f3f3;
+  background: #ffffff;
+  color: #080808;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -324,6 +324,7 @@ header {
   height: 15rem;
   margin: 2rem auto;
   flex-direction: column;
+  box-shadow: $shadow-1;
 }
 
 .team-chat-card {
@@ -719,9 +720,9 @@ header {
 }
 
 .nav-color {
-   a {
-     color: var(--section-text);
-   }
+  
+  color: var(--section-text) !important;
+  
 }
 
 
@@ -753,13 +754,13 @@ header {
 
 #btn-latest {
   cursor: pointer;
-  border: 1px solid var(--bg-section);
+  border: 1px solid var(--card-border);
   background: transparent;
   padding: 1rem 3rem;
  
   margin: 0 auto;
   display: block;
-  color: var(--bg-section);
+  color: var(--section-text);
 }
 
 .about-container {

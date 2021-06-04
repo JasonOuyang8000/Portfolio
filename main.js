@@ -5,7 +5,7 @@ const projectSections = document.querySelectorAll('.project-section');
 const backToTop = document.querySelector('#back-to-top');
 const backToMenu= document.querySelector('#back-to-menu');
 const pInfo = document.querySelectorAll('.p-info');
-
+const pName= document.getElementById('p-name');
 const projectPositions = [...projectSections].map(pos => {
     const elemRect = pos.getBoundingClientRect();
 
@@ -154,11 +154,11 @@ window.addEventListener('scroll',((e) => {
     //     backToTop.classList.add('hidden');
     // }
 
-    if (window.scrollY > 900) {
-        navBar.classList.add('nav-color')
+    if (currentElement.id !== 'section-start') {
+        pName.classList.add('nav-color')
     }
     else {
-        navBar.classList.remove('nav-color')
+        pName.classList.remove('nav-color')
     }
 
     if (currentElement.id === 'section-about') {
