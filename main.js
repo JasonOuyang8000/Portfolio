@@ -1,4 +1,6 @@
-const navLinks = document.querySelectorAll('.navbar a');
+document.addEventListener("DOMContentLoaded", function(event) {
+    // Your code to run since DOM is loaded and ready
+    const navLinks = document.querySelectorAll('.navbar a');
 const navBar = document.querySelector('.navbar');
 const sections = document.querySelectorAll('body > .section');
 const projectSections = document.querySelectorAll('.project-section');
@@ -215,3 +217,5 @@ backToMenu.addEventListener('click', (e) => {
 
     smooth_scroll_to(window,location + window.scrollY,800);
 })
+});
+
