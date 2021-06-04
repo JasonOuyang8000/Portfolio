@@ -96,7 +96,7 @@ const smooth_scroll_to = function(element, target, duration) {
             let now = Date.now();
             let point = smooth_step(start_time, end_time, now);
             let frameTop = Math.round(start_top + (distance * point));
-            element.scrollTo(element.scrollY,frameTop);
+            element.scroll(element.scrollY,frameTop);
    
             // check if we're done!
             if(now >= end_time) {
