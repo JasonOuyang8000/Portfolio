@@ -233,7 +233,7 @@ header {
 .navbar a {
   color: #0f0f0f;
   cursor: pointer;
-  margin-right: 1.2rem;
+  margin-right: 20px;
 }
 @media screen and (max-width: 1150px) {
   .navbar a {
